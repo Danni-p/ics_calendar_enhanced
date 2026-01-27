@@ -168,7 +168,7 @@ final class Display {
 
         ?>
         <div class="ics-enhanced-color-legend">
-            <span class="ics-enhanced-legend-title"><?php esc_html_e( 'Legende', 'ics-calendar-enhanced' ); ?></span>
+            <span class="ics-enhanced-legend-title"><?php esc_html_e( 'Legend', 'ics-calendar-enhanced' ); ?></span>
             <ul class="ics-enhanced-legend-list">
                 <?php foreach ( $color_mappings as $category => $color ) : ?>
                     <li class="ics-enhanced-legend-item">
