@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <rect width="150" height="150" fill="#f0f0f0"/>
+  <rect x="10" y="10" width="130" height="130" fill="#e0e0e0" rx="8"/>
+  <g fill="#999" transform="translate(75, 75)">
+    <rect x="-40" y="-35" width="80" height="55" rx="4" fill="none" stroke="#999" stroke-width="2"/>
+    <circle cx="0" cy="-10" r="12" fill="none" stroke="#999" stroke-width="2"/>
+    <path d="M-25 15 L-10 0 L5 12 L15 5 L30 20" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="75" y="125" font-family="Arial, sans-serif" font-size="11" fill="#888" text-anchor="middle">Category Image</text>
+</svg>
+
+

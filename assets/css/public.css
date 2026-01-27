@@ -1,0 +1,330 @@
+/**
+ * ICS Calendar Enhanced - Public Styles
+ *
+ * @package ICSEnhanced
+ */
+
+/* ========================================
+   Category Color Coding Styles
+   ======================================== */
+
+/* Base styles for .ics-calendar-date elements */
+.ics-calendar-date {
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* When color is applied via JavaScript */
+.ics-calendar-date[data-category-color] {
+    border-radius: 4px;
+}
+
+/* Ensure smooth transitions for color changes */
+.event[data-categories] .ics-calendar-date {
+    transition: border-color 0.25s ease-in-out, 
+                background-color 0.25s ease-in-out,
+                box-shadow 0.25s ease-in-out;
+}
+
+/* Subtle hover effect on colored date elements */
+.event[data-ics-color-applied] .ics-calendar-date:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Month view specific adjustments */
+.r34ics_month .ics-calendar-date[data-category-color] {
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* List view specific adjustments */
+.r34ics_list .ics-calendar-date[data-category-color],
+.r34ics_basic .ics-calendar-date[data-category-color] {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Week view specific adjustments */
+.r34ics_week .ics-calendar-date[data-category-color] {
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* ========================================
+   Category Image Styles
+   ======================================== */
+
+/* Event Wrapper with Category Image */
+.ics-enhanced-event-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* When wrapper is inside a title/label element */
+.title .ics-enhanced-event-wrapper,
+.event-title .ics-enhanced-event-wrapper,
+.r34ics .title .ics-enhanced-event-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    vertical-align: middle;
+}
+
+.ics-enhanced-event-wrapper .ics-enhanced-event-category-image {
+    flex-shrink: 0;
+}
+
+/* Category Image Base Styles */
+.ics-enhanced-category-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Event Category Image - Smaller size for inline display in titles */
+.ics-enhanced-event-category-image {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+/* Larger image size for list views */
+.descloc .ics-enhanced-event-category-image,
+.r34ics_list .ics-enhanced-event-category-image,
+.r34ics_basic .ics-enhanced-event-category-image {
+    width: 40px;
+    height: 40px;
+}
+
+/* Medium image size for month view */
+.r34ics_month .ics-enhanced-event-category-image {
+    width: 20px;
+    height: 20px;
+}
+
+/* Week view */
+.r34ics_week .ics-enhanced-event-category-image {
+    width: 18px;
+    height: 18px;
+}
+
+/* Shortcode Image */
+.ics-enhanced-shortcode-image {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Calendar List View Integration */
+.ics-calendar .ics-enhanced-event-wrapper {
+    margin-bottom: 5px;
+}
+
+/* Calendar Grid View Integration */
+.ics-calendar-grid .ics-enhanced-event-wrapper {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ICS Calendar specific styling for R34ICS */
+.r34ics .title .ics-enhanced-event-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.r34ics .descloc .ics-enhanced-event-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.r34ics .descloc .ics-enhanced-event-category-image {
+    width: 50px;
+    height: 50px;
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+
+@media screen and (max-width: 600px) {
+    .ics-enhanced-event-category-image {
+        width: 20px;
+        height: 20px;
+    }
+
+    .descloc .ics-enhanced-event-category-image,
+    .r34ics_list .ics-enhanced-event-category-image {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Smaller padding for colored dates on mobile */
+    .ics-calendar-date[data-category-color] {
+        padding: 2px 4px;
+    }
+}
+
+/* ========================================
+   Loading & Error States
+   ======================================== */
+
+/* Loading State */
+.ics-enhanced-category-image.loading {
+    opacity: 0.5;
+}
+
+/* Error State - When image fails to load */
+.ics-enhanced-category-image.ics-enhanced-image-error {
+    background-color: #f0f0f0;
+    display: none; /* Hide broken images */
+}
+
+/* Successfully loaded state */
+.ics-enhanced-category-image.ics-enhanced-image-loaded {
+    opacity: 1;
+}
+
+/* ========================================
+   Hover Effects
+   ======================================== */
+
+/* Hover Effects - Only on larger screens */
+@media screen and (min-width: 601px) {
+    .ics-enhanced-category-image {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ics-enhanced-event-wrapper:hover .ics-enhanced-category-image {
+        transform: scale(1.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    .ics-enhanced-category-image {
+        max-width: 30px;
+        max-height: 30px;
+    }
+
+    /* Preserve colors in print but with lighter background */
+    .ics-calendar-date[data-category-color] {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* ========================================
+   Category Color Legend
+   ======================================== */
+
+/* Legend Container */
+.ics-enhanced-color-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Legend Title */
+.ics-enhanced-legend-title {
+    font-weight: 600;
+    color: #495057;
+    white-space: nowrap;
+}
+
+/* Legend List - Horizontal Layout */
+.ics-enhanced-legend-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Legend Item */
+.ics-enhanced-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Color Swatch */
+.ics-enhanced-legend-color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border-width: 3px;
+    border-style: solid;
+    flex-shrink: 0;
+}
+
+/* Category Label */
+.ics-enhanced-legend-label {
+    color: #212529;
+    font-size: 13px;
+}
+
+/* Responsive: Stack on mobile */
+@media screen and (max-width: 600px) {
+    .ics-enhanced-color-legend {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .ics-enhanced-legend-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .ics-enhanced-legend-item {
+        width: 100%;
+    }
+
+    .ics-enhanced-legend-color {
+        width: 14px;
+        height: 14px;
+    }
+
+    .ics-enhanced-legend-label {
+        font-size: 12px;
+    }
+}
+
+/* Print Styles for Legend */
+@media print {
+    .ics-enhanced-color-legend {
+        background-color: #fff;
+        border-color: #ccc;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .ics-enhanced-legend-color {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
