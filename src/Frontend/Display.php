@@ -346,11 +346,11 @@ final class Display {
         }
 
         if ( 0 === $days ) {
-            return __( 'Findet heute statt', 'ics-calendar-enhanced' );
+            return __( 'Takes place today', 'ics-calendar-enhanced' );
         }
 
         /* translators: %d: number of days until the event */
-        return sprintf( _n( 'Noch %d Tag', 'Noch %d Tage', $days, 'ics-calendar-enhanced' ), $days );
+        return sprintf( _n( 'In %d day', 'In %d days', $days, 'ics-calendar-enhanced' ), $days );
     }
 
     /**

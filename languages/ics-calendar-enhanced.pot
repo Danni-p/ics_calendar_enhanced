@@ -146,3 +146,15 @@ msgstr ""
 #, php-format
 msgid "Icon for category: %s"
 msgstr ""
+
+#: src/Frontend/Display.php:349
+msgid "Takes place today"
+msgstr ""
+
+#. translators: %d: number of days until the event
+#: src/Frontend/Display.php:353
+#, php-format
+msgid "In %d day"
+msgid_plural "In %d days"
+msgstr[0] ""
+msgstr[1] ""
