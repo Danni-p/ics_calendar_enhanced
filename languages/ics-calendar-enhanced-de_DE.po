@@ -3,10 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICS Calendar Enhanced 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ICS Calendar "
-"Enhanced\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ICS Calendar Enhanced\n"
 "POT-Creation-Date: 2026-01-27T16:46:15+00:00\n"
-"PO-Revision-Date: 2026-01-29 00:40+0100\n"
+"PO-Revision-Date: 2026-01-29 00:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -18,8 +17,7 @@ msgstr ""
 "X-Domain: ics-calendar-enhanced\n"
 
 #. Plugin Name of the plugin
-#: ics-calendar-enhanced.php src/Admin/Settings_Page.php:47
-#: src/Admin/Settings_Page.php:48 src/Core/Plugin.php:86
+#: ics-calendar-enhanced.php src/Admin/Settings_Page.php:47 src/Admin/Settings_Page.php:48 src/Core/Plugin.php:86
 msgid "ICS Calendar Enhanced"
 msgstr ""
 
@@ -31,13 +29,11 @@ msgstr ""
 #. Description of the plugin
 #: ics-calendar-enhanced.php
 msgid ""
-"Extends the ICS Calendar plugin with category icons mapping. Allows users "
-"to assign icons to calendar event categories through an intuitive admin "
-"interface."
+"Extends the ICS Calendar plugin with category icons mapping. Allows users to assign icons to calendar event categories "
+"through an intuitive admin interface."
 msgstr ""
-"Erweitert das ICS Calendar Plugin um eine Zuordnung von Kategoriebildern. "
-"Es ermöglicht Nutzern, den Kategorien von Kalenderereignissen über eine "
-"intuitive Benutzeroberfläche Bilder zuzuweisen."
+"Erweitert das ICS Calendar Plugin um eine Zuordnung von Kategoriebildern. Es ermöglicht Nutzern, den Kategorien von "
+"Kalenderereignissen über eine intuitive Benutzeroberfläche Bilder zuzuweisen."
 
 #. Author of the plugin
 #: ics-calendar-enhanced.php
@@ -91,12 +87,11 @@ msgstr "Bildzuordnungen nach Kategorien"
 
 #: src/Admin/Settings_Page.php:149
 msgid ""
-"Map category strings from your ICS calendar feeds to icons and colors. The "
-"category string should match exactly what appears in your calendar events."
+"Map category strings from your ICS calendar feeds to icons and colors. The category string should match exactly what "
+"appears in your calendar events."
 msgstr ""
-"Ordnen Sie Kategorie-Strings aus Ihren ICS-Kalender-Feeds Bildern und "
-"Farben zu. Der Kategorie-String muss exakt so geschrieben sein, wie er in "
-"Ihren Kalenderereignissen erscheint."
+"Ordnen Sie Kategorie-Strings aus Ihren ICS-Kalender-Feeds Bildern und Farben zu. Der Kategorie-String muss exakt so "
+"geschrieben sein, wie er in Ihren Kalenderereignissen erscheint."
 
 #: src/Admin/Settings_Page.php:155
 msgid "Category String"
@@ -124,12 +119,11 @@ msgstr "Fallback Bild"
 
 #: src/Admin/Settings_Page.php:185
 msgid ""
-"This icon will be shown for any category that is not explicitly mapped "
-"above. If not set, a bundled default icon will be used."
+"This icon will be shown for any category that is not explicitly mapped above. If not set, a bundled default icon will "
+"be used."
 msgstr ""
-"Dieses Bild wird für jede Kategorie angezeigt, die oben nicht ausdrücklich "
-"zugeordnet ist. Wenn nichts festgelegt ist, wird ein mitgeliefertes "
-"Standardbild verwendet."
+"Dieses Bild wird für jede Kategorie angezeigt, die oben nicht ausdrücklich zugeordnet ist. Wenn nichts festgelegt ist, "
+"wird ein mitgeliefertes Standardbild verwendet."
 
 #: src/Admin/Settings_Page.php:192
 msgid "Fallback"
@@ -148,11 +142,8 @@ msgid "Enter category name..."
 msgstr "Kategorienamen eingeben…"
 
 #: src/Core/Plugin.php:87
-msgid ""
-"This plugin requires the ICS Calendar plugin to be installed and activated."
-msgstr ""
-"Dieses Plugin erfordert, dass das Plugin ICS Calendar installiert und "
-"aktiviert ist."
+msgid "This plugin requires the ICS Calendar plugin to be installed and activated."
+msgstr "Dieses Plugin erfordert, dass das Plugin ICS Calendar installiert und aktiviert ist."
 
 #: src/Frontend/Display.php:171
 msgid "Legend"
@@ -175,3 +166,23 @@ msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Noch %d Tag"
 msgstr[1] "Noch %d Tage"
+
+#: src/Admin/Settings_Page.php
+msgid "Event Display"
+msgstr "Ereignisanzeige"
+
+#: src/Admin/Settings_Page.php
+msgid "Control how event information is shown on the frontend."
+msgstr "Steuert, wie Ereignisinformationen auf der Website angezeigt werden."
+
+#: src/Admin/Settings_Page.php
+msgid "Countdown subline"
+msgstr "Countdown-Zeile"
+
+#: src/Admin/Settings_Page.php
+msgid "Show countdown subline below event titles"
+msgstr "Countdown-Zeile unter Ereignistiteln anzeigen"
+
+#: src/Admin/Settings_Page.php
+msgid "When enabled, each event shows a line such as \"In 5 days\" or \"Takes place today\" below its title."
+msgstr "Wenn aktiviert, wird unter jedem Ereignistitel eine Zeile wie „Noch 5 Tage“ oder „Findet heute statt“ angezeigt."

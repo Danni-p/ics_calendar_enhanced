@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace ICSEnhanced\Admin;
 
+use ICSEnhanced\Core\Activator;
 use ICSEnhanced\Includes\Helpers;
 
 /**
@@ -118,6 +119,10 @@ final class Settings_Page {
             : 0;
         Category_Mapper::save_general_fallback( $general_fallback );
 
+        // Save countdown subline setting
+        $show_countdown = isset( $_POST['ics_enhanced_show_countdown_subline'] ) ? 1 : 0;
+        update_option( Activator::OPTION_SHOW_COUNTDOWN_SUBLINE, $show_countdown );
+
         // Add success message
         add_settings_error(
             'ics_enhanced_settings',
@@ -133,6 +138,7 @@ final class Settings_Page {
     public function render_settings_page(): void {
         $mappings = Category_Mapper::get_mappings();
         $general_fallback = Category_Mapper::get_general_fallback();
+        $show_countdown_subline = (bool) get_option( Activator::OPTION_SHOW_COUNTDOWN_SUBLINE, 1 );
         ?>
         <div class="wrap ics-enhanced-settings">
             <h1><?php esc_html_e( 'ICS Calendar Enhanced Settings', 'ics-calendar-enhanced' ); ?></h1>
@@ -212,6 +218,35 @@ final class Settings_Page {
                                         <?php esc_html_e( 'Remove', 'ics-calendar-enhanced' ); ?>
                                     </button>
                                 </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Display Section -->
+                <div class="ics-enhanced-section">
+                    <h2><?php esc_html_e( 'Event Display', 'ics-calendar-enhanced' ); ?></h2>
+                    <p class="description">
+                        <?php esc_html_e( 'Control how event information is shown on the frontend.', 'ics-calendar-enhanced' ); ?>
+                    </p>
+
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">
+                                <?php esc_html_e( 'Countdown subline', 'ics-calendar-enhanced' ); ?>
+                            </th>
+                            <td>
+                                <label for="ics-enhanced-show-countdown-subline">
+                                    <input type="checkbox"
+                                           name="ics_enhanced_show_countdown_subline"
+                                           id="ics-enhanced-show-countdown-subline"
+                                           value="1"
+                                           <?php checked( $show_countdown_subline ); ?> />
+                                    <?php esc_html_e( 'Show countdown subline below event titles', 'ics-calendar-enhanced' ); ?>
+                                </label>
+                                <p class="description">
+                                    <?php esc_html_e( 'When enabled, each event shows a line such as "In 5 days" or "Takes place today" below its title.', 'ics-calendar-enhanced' ); ?>
+                                </p>
                             </td>
                         </tr>
                     </table>

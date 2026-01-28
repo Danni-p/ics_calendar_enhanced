@@ -20,6 +20,7 @@ final class Activator {
     public const OPTION_VERSION = 'ics_enhanced_version';
     public const OPTION_MAPPINGS = 'ics_enhanced_category_mappings';
     public const OPTION_GENERAL_FALLBACK = 'ics_enhanced_general_fallback';
+    public const OPTION_SHOW_COUNTDOWN_SUBLINE = 'ics_enhanced_show_countdown_subline';
 
     /**
      * Data structure version for migration purposes.
@@ -52,6 +53,10 @@ final class Activator {
         if ( get_option( self::OPTION_GENERAL_FALLBACK ) === false ) {
             // Fallback starts empty - user can set it in admin
             add_option( self::OPTION_GENERAL_FALLBACK, '' );
+        }
+
+        if ( get_option( self::OPTION_SHOW_COUNTDOWN_SUBLINE ) === false ) {
+            add_option( self::OPTION_SHOW_COUNTDOWN_SUBLINE, 1 );
         }
 
         // Set data version for new installs

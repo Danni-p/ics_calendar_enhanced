@@ -9,8 +9,9 @@ declare(strict_types=1);
 
 namespace ICSEnhanced\Frontend;
 
-use ICSEnhanced\Includes\Helpers;
 use ICSEnhanced\Admin\Category_Mapper;
+use ICSEnhanced\Core\Activator;
+use ICSEnhanced\Includes\Helpers;
 
 /**
  * Display Class - Handles frontend category image display.
@@ -80,8 +81,11 @@ final class Display {
             'class' => 'ics-enhanced-event-category-image',
         ] );
 
-        // Compute dynamic subtitle based on days until event start
-        $subtitle_text = $this->get_event_subtitle_text( $event );
+        // Compute dynamic subtitle based on days until event start (only if enabled in settings)
+        $subtitle_text = '';
+        if ( (bool) get_option( Activator::OPTION_SHOW_COUNTDOWN_SUBLINE, true ) ) {
+            $subtitle_text = $this->get_event_subtitle_text( $event );
+        }
         $subtitle_html = '' !== $subtitle_text
             ? '<span class="ics-enhanced-event-subtitle">' . esc_html( $subtitle_text ) . '</span>'
             : '';
