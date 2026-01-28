@@ -68,23 +68,43 @@ final class Display {
      * @return string Modified HTML with image prepended.
      */
     public function filter_event_label_html( string $title_content, array $args, $event, ?array $classes ): string {
-        // Convert event object to array if needed
-        $event_array = $this->event_to_array( $event );
-        $category = $this->extract_category_from_event( $event_array );
+        // $event is already the processed event_item array with dtstart_date
+        if ( ! is_array( $event ) ) {
+            return $title_content;
+        }
 
-        // Use empty string to trigger fallback logic for events without categories
+        $category = $this->extract_category_from_event( $event );
         $category = $category ?: '';
 
         $image_html = Helpers::get_category_image_html( $category, 'thumbnail', [
             'class' => 'ics-enhanced-event-category-image',
         ] );
 
-        if ( empty( $image_html ) ) {
+        // Compute dynamic subtitle based on days until event start
+        $subtitle_text = $this->get_event_subtitle_text( $event );
+        $subtitle_html = '' !== $subtitle_text
+            ? '<span class="ics-enhanced-event-subtitle">' . esc_html( $subtitle_text ) . '</span>'
+            : '';
+
+        // If no image and no subtitle, return original content unchanged
+        if ( empty( $image_html ) && empty( $subtitle_html ) ) {
             return $title_content;
         }
 
-        // Wrap the entire label with image prepended
-        return '<span class="ics-enhanced-event-wrapper">' . $image_html . $title_content . '</span>';
+        // Build media HTML (only if we have an image)
+        $media_html = ! empty( $image_html )
+            ? '<span class="ics-enhanced-event-media">' . $image_html . '</span>'
+            : '';
+
+        // Wrap the entire label with optional image + title + optional subtitle.
+        // Note: $title_content may contain HTML created by ICS Calendar (e.g. links/spans), so we keep it as-is.
+        return '<span class="ics-enhanced-event-wrapper">'
+            . $media_html
+            . '<span class="ics-enhanced-event-text">'
+                . '<span class="ics-enhanced-event-title">' . $title_content . '</span>'
+                . $subtitle_html
+            . '</span>'
+        . '</span>';
     }
 
     /**
@@ -281,6 +301,56 @@ final class Display {
         }
 
         return '';
+    }
+
+    /**
+     * Get the subtitle text based on days until event start.
+     *
+     * - Future events: "Noch X Tage"
+     * - Today: "Findet heute statt"
+     * - Past events: empty string
+     *
+     * @param array $event Event data array (already processed by ICS Calendar).
+     * @return string Subtitle text or empty string.
+     */
+    private function get_event_subtitle_text( array $event ): string {
+        // ICS Calendar provides dtstart_date in Ymd format (e.g., "20260601")
+        if ( empty( $event['dtstart_date'] ) ) {
+            return '';
+        }
+
+        $dtstart_date = $event['dtstart_date'];
+
+        // Use site timezone for accurate day comparison
+        $tz = wp_timezone();
+
+        // Parse Ymd format (e.g., "20260601") into DateTime
+        $event_date = \DateTime::createFromFormat( 'Ymd', $dtstart_date, $tz );
+        if ( false === $event_date ) {
+            return '';
+        }
+
+        // Set to start of day for accurate day comparison
+        $event_date->setTime( 0, 0, 0 );
+
+        // Get today at start of day in site timezone
+        $today = new \DateTime( 'today', $tz );
+
+        // Calculate day difference
+        $diff = $today->diff( $event_date );
+        $days = (int) $diff->format( '%r%a' ); // Signed day count
+
+        if ( $days < 0 ) {
+            // Event is in the past
+            return '';
+        }
+
+        if ( 0 === $days ) {
+            return __( 'Findet heute statt', 'ics-calendar-enhanced' );
+        }
+
+        /* translators: %d: number of days until the event */
+        return sprintf( _n( 'Noch %d Tag', 'Noch %d Tage', $days, 'ics-calendar-enhanced' ), $days );
     }
 
     /**

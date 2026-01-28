@@ -55,19 +55,51 @@
 
 /* Event Wrapper with Category Image */
 .ics-enhanced-event-wrapper {
-    display: inline-flex;
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 8px;
     align-items: center;
-    gap: 8px;
 }
 
 /* When wrapper is inside a title/label element */
 .title .ics-enhanced-event-wrapper,
 .event-title .ics-enhanced-event-wrapper,
 .r34ics .title .ics-enhanced-event-wrapper {
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 6px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.ics-enhanced-event-media {
+    grid-column: 1;
+    grid-row: 1 / span 2;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    vertical-align: middle;
+}
+
+.ics-enhanced-event-text {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ics-enhanced-event-title {
+    line-height: 1.2;
+}
+
+.ics-enhanced-event-subtitle {
+    margin-top: 2px;
+    font-size: 0.8em;
+    line-height: 1.2;
+    color: inherit;
+    opacity: 0.6;
+    font-weight: 200;
 }
 
 .ics-enhanced-event-wrapper .ics-enhanced-event-category-image {
@@ -83,8 +115,8 @@
 
 /* Event Category Image - Smaller size for inline display in titles */
 .ics-enhanced-event-category-image {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     object-fit: cover;
     border-radius: 4px;
     vertical-align: middle;
