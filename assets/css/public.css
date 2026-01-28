@@ -300,15 +300,26 @@
     white-space: nowrap;
 }
 
-/* Color Swatch */
+/* Color Swatch - border in category color, fill at low opacity (like .ics-calendar-date) */
 .ics-enhanced-legend-color {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
     border-width: 3px;
     border-style: solid;
+    background-color: transparent;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.ics-enhanced-legend-color .ics-enhanced-legend-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 /* Category Label */
@@ -337,8 +348,13 @@
     }
 
     .ics-enhanced-legend-color {
-        width: 14px;
-        height: 14px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .ics-enhanced-legend-color .ics-enhanced-legend-icon {
+        width: 20px;
+        height: 20px;
     }
 
     .ics-enhanced-legend-label {

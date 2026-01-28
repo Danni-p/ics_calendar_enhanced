@@ -116,6 +116,29 @@ final class Helpers {
     }
 
     /**
+     * Convert a hex color to rgba with a given alpha.
+     *
+     * Matches the opacity used by ICS Calendar date elements (0.15).
+     *
+     * @param string $hex   Hex color (e.g. "#ff0000" or "#f00").
+     * @param float  $alpha Alpha value 0–1 (default 0.15).
+     * @return string RGBA color string or empty string if hex invalid.
+     */
+    public static function hex_to_rgba( string $hex, float $alpha = 0.15 ): string {
+        $hex = ltrim( $hex, '#' );
+        if ( strlen( $hex ) === 3 ) {
+            $hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+        }
+        if ( strlen( $hex ) !== 6 || ! ctype_xdigit( $hex ) ) {
+            return '';
+        }
+        $r = (int) hexdec( substr( $hex, 0, 2 ) );
+        $g = (int) hexdec( substr( $hex, 2, 2 ) );
+        $b = (int) hexdec( substr( $hex, 4, 2 ) );
+        return sprintf( 'rgba(%d, %d, %d, %s)', $r, $g, $b, (string) $alpha );
+    }
+
+    /**
      * Sanitize a category string.
      *
      * @param string $category Category string.

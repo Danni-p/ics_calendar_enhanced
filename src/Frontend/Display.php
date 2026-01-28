@@ -195,8 +195,28 @@ final class Display {
             <span class="ics-enhanced-legend-title"><?php esc_html_e( 'Legend', 'ics-calendar-enhanced' ); ?></span>
             <ul class="ics-enhanced-legend-list">
                 <?php foreach ( $color_mappings as $category => $color ) : ?>
+                    <?php
+                    $icon_html = '';
+                    $image_id  = Category_Mapper::get_image_for_category( $category );
+                    if ( $image_id !== null && $image_id > 0 ) {
+                        $icon_html = Helpers::get_category_image_html( $category, 'thumbnail', [
+                            'class' => 'ics-enhanced-legend-icon',
+                        ] );
+                    }
+                    ?>
                     <li class="ics-enhanced-legend-item">
-                        <span class="ics-enhanced-legend-color" style="background-color: <?php echo esc_attr( $color ); ?>; border-color: <?php echo esc_attr( $color ); ?>;"></span>
+                        <?php
+                        $legend_bg = Helpers::hex_to_rgba( $color, 0.15 );
+                        $legend_style = 'border-color: ' . esc_attr( $color ) . ';';
+                        if ( $legend_bg !== '' ) {
+                            $legend_style .= ' background-color: ' . esc_attr( $legend_bg ) . ';';
+                        }
+                        ?>
+                        <span class="ics-enhanced-legend-color" style="<?php echo $legend_style; ?>">
+                            <?php if ( $icon_html !== '' ) : ?>
+                                <?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML from get_category_image_html with escaped attributes ?>
+                            <?php endif; ?>
+                        </span>
                         <span class="ics-enhanced-legend-label"><?php echo esc_html( $category ); ?></span>
                     </li>
                 <?php endforeach; ?>
