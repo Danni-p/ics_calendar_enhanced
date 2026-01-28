@@ -30,8 +30,8 @@ msgstr ""
 #. Description of the plugin
 #: ics-calendar-enhanced.php
 msgid ""
-"Extends the ICS Calendar plugin with category images mapping. Allows users "
-"to assign images to calendar event categories through an intuitive admin "
+"Extends the ICS Calendar plugin with category icons mapping. Allows users "
+"to assign icons to calendar event categories through an intuitive admin "
 "interface."
 msgstr ""
 "Erweitert das ICS Calendar Plugin um eine Zuordnung von Kategoriebildern. "
@@ -49,7 +49,7 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/Admin/Assets.php:65 src/Admin/Settings_Page.php:209
-msgid "Select Image"
+msgid "Select Icon"
 msgstr "Bild auswählen"
 
 #: src/Admin/Assets.php:66
@@ -61,7 +61,7 @@ msgid "Are you sure you want to remove this mapping?"
 msgstr "Möchten Sie diese Zuordnung wirklich entfernen?"
 
 #: src/Admin/Assets.php:68
-msgid "No image selected"
+msgid "No icon selected"
 msgstr "Kein Bild ausgewählt"
 
 #: src/Admin/Assets.php:69 src/Admin/Settings_Page.php:264
@@ -85,12 +85,12 @@ msgid "ICS Calendar Enhanced Settings"
 msgstr "ICS Calendar Enhanced Einstellungen"
 
 #: src/Admin/Settings_Page.php:147
-msgid "Category Image Mappings"
+msgid "Category Icon Mappings"
 msgstr "Bildzuordnungen nach Kategorien"
 
 #: src/Admin/Settings_Page.php:149
 msgid ""
-"Map category strings from your ICS calendar feeds to images and colors. The "
+"Map category strings from your ICS calendar feeds to icons and colors. The "
 "category string should match exactly what appears in your calendar events."
 msgstr ""
 "Ordnen Sie Kategorie-Strings aus Ihren ICS-Kalender-Feeds Bildern und "
@@ -102,7 +102,7 @@ msgid "Category String"
 msgstr "Kategorie Zeichen"
 
 #: src/Admin/Settings_Page.php:156
-msgid "Image"
+msgid "Icon"
 msgstr "Bild"
 
 #: src/Admin/Settings_Page.php:157
@@ -118,13 +118,13 @@ msgid "Add New Mapping"
 msgstr "Neue Zuordnung hinzufügen"
 
 #: src/Admin/Settings_Page.php:183
-msgid "Fallback Image"
+msgid "Fallback Icon"
 msgstr "Fallback Bild"
 
 #: src/Admin/Settings_Page.php:185
 msgid ""
-"This image will be shown for any category that is not explicitly mapped "
-"above. If not set, a bundled default image will be used."
+"This icon will be shown for any category that is not explicitly mapped "
+"above. If not set, a bundled default icon will be used."
 msgstr ""
 "Dieses Bild wird für jede Kategorie angezeigt, die oben nicht ausdrücklich "
 "zugeordnet ist. Wenn nichts festgelegt ist, wird ein mitgeliefertes "
@@ -160,5 +160,5 @@ msgstr "Legende"
 #. translators: %s: Category name
 #: src/Includes/Helpers.php:92
 #, php-format
-msgid "Image for category: %s"
+msgid "Icon for category: %s"
 msgstr "Bild für Kategorie: %s"

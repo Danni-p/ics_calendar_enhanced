@@ -363,7 +363,7 @@
     function injectImageIntoTitle(titleElement, imageUrl, category) {
         var img = document.createElement('img');
         img.src = imageUrl;
-        img.alt = category ? 'Image for category: ' + category : 'Event image';
+        img.alt = category ? 'Icon for category: ' + category : 'Event icon';
         img.className = config.imageClass;
         img.loading = 'lazy';
 

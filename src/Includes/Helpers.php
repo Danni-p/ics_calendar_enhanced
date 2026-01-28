@@ -89,7 +89,7 @@ final class Helpers {
             'src'   => esc_url( $url ),
             'alt'   => esc_attr( sprintf(
                 /* translators: %s: Category name */
-                __( 'Image for category: %s', 'ics-calendar-enhanced' ),
+                __( 'Icon for category: %s', 'ics-calendar-enhanced' ),
                 $category
             ) ),
             'class' => 'ics-enhanced-category-image',

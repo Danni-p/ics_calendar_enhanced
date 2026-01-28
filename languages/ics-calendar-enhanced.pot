@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-27T16:46:15+00:00\n"
+"POT-Creation-Date: 2026-01-28T11:39:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ics-calendar-enhanced\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #. Description of the plugin
 #: ics-calendar-enhanced.php
-msgid "Extends the ICS Calendar plugin with category images mapping. Allows users to assign images to calendar event categories through an intuitive admin interface."
+msgid "Extends the ICS Calendar plugin with category icons mapping. Allows users to assign icons to calendar event categories through an intuitive admin interface."
 msgstr ""
 
 #. Author of the plugin
@@ -44,7 +44,7 @@ msgstr ""
 
 #: src/Admin/Assets.php:65
 #: src/Admin/Settings_Page.php:209
-msgid "Select Image"
+msgid "Select Icon"
 msgstr ""
 
 #: src/Admin/Assets.php:66
@@ -56,7 +56,7 @@ msgid "Are you sure you want to remove this mapping?"
 msgstr ""
 
 #: src/Admin/Assets.php:68
-msgid "No image selected"
+msgid "No icon selected"
 msgstr ""
 
 #: src/Admin/Assets.php:69
@@ -81,11 +81,11 @@ msgid "ICS Calendar Enhanced Settings"
 msgstr ""
 
 #: src/Admin/Settings_Page.php:147
-msgid "Category Image Mappings"
+msgid "Category Icon Mappings"
 msgstr ""
-
+  
 #: src/Admin/Settings_Page.php:149
-msgid "Map category strings from your ICS calendar feeds to images and colors. The category string should match exactly what appears in your calendar events."
+msgid "Map category strings from your ICS calendar feeds to icons and colors. The category string should match exactly what appears in your calendar events."
 msgstr ""
 
 #: src/Admin/Settings_Page.php:155
@@ -93,7 +93,7 @@ msgid "Category String"
 msgstr ""
 
 #: src/Admin/Settings_Page.php:156
-msgid "Image"
+msgid "Icon"
 msgstr ""
 
 #: src/Admin/Settings_Page.php:157
@@ -109,11 +109,11 @@ msgid "Add New Mapping"
 msgstr ""
 
 #: src/Admin/Settings_Page.php:183
-msgid "Fallback Image"
+msgid "Fallback Icon"
 msgstr ""
 
 #: src/Admin/Settings_Page.php:185
-msgid "This image will be shown for any category that is not explicitly mapped above. If not set, a bundled default image will be used."
+msgid "This icon will be shown for any category that is not explicitly mapped above. If not set, a bundled default icon will be used."
 msgstr ""
 
 #: src/Admin/Settings_Page.php:192
@@ -144,5 +144,5 @@ msgstr ""
 #. translators: %s: Category name
 #: src/Includes/Helpers.php:92
 #, php-format
-msgid "Image for category: %s"
+msgid "Icon for category: %s"
 msgstr ""

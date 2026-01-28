@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       ICS Calendar Enhanced
  * Plugin URI:        https://example.com/plugins/ics-calendar-enhanced
- * Description:       Extends the ICS Calendar plugin with category images mapping. Allows users to assign images to calendar event categories through an intuitive admin interface.
+ * Description:       Extends the ICS Calendar plugin with category icons mapping. Allows users to assign icons to calendar event categories through an intuitive admin interface.
  * Version:           1.0.0
  * Requires at least: 6.0
  * Requires PHP:      8.0

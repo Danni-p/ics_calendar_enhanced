@@ -62,10 +62,10 @@ final class Assets {
             'icsEnhancedAdmin',
             [
                 'strings' => [
-                    'selectImage'       => __( 'Select Image', 'ics-calendar-enhanced' ),
+                    'selectImage'       => __( 'Select Icon', 'ics-calendar-enhanced' ),
                     'useThisImage'      => __( 'Use This Image', 'ics-calendar-enhanced' ),
                     'removeConfirm'     => __( 'Are you sure you want to remove this mapping?', 'ics-calendar-enhanced' ),
-                    'noImageSelected'   => __( 'No image selected', 'ics-calendar-enhanced' ),
+                    'noImageSelected'   => __( 'No icon selected', 'ics-calendar-enhanced' ),
                     'selectButton'      => __( 'Select', 'ics-calendar-enhanced' ),
                 ],
                 'defaultImage'      => ICS_ENHANCED_PLUGIN_URL . 'assets/images/default-fallback.svg',

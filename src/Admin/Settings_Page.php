@@ -144,16 +144,16 @@ final class Settings_Page {
 
                 <!-- Category Mappings Section -->
                 <div class="ics-enhanced-section">
-                    <h2><?php esc_html_e( 'Category Image Mappings', 'ics-calendar-enhanced' ); ?></h2>
+                    <h2><?php esc_html_e( 'Category Icon Mappings', 'ics-calendar-enhanced' ); ?></h2>
                     <p class="description">
-                        <?php esc_html_e( 'Map category strings from your ICS calendar feeds to images and colors. The category string should match exactly what appears in your calendar events.', 'ics-calendar-enhanced' ); ?>
+                        <?php esc_html_e( 'Map category strings from your ICS calendar feeds to icons and colors. The category string should match exactly what appears in your calendar events.', 'ics-calendar-enhanced' ); ?>
                     </p>
 
                     <table class="wp-list-table widefat fixed striped" id="ics-enhanced-mappings-table">
                         <thead>
                             <tr>
                                 <th class="column-category"><?php esc_html_e( 'Category String', 'ics-calendar-enhanced' ); ?></th>
-                                <th class="column-image"><?php esc_html_e( 'Image', 'ics-calendar-enhanced' ); ?></th>
+                                <th class="column-image"><?php esc_html_e( 'Icon', 'ics-calendar-enhanced' ); ?></th>
                                 <th class="column-color"><?php esc_html_e( 'Color', 'ics-calendar-enhanced' ); ?></th>
                                 <th class="column-actions"><?php esc_html_e( 'Actions', 'ics-calendar-enhanced' ); ?></th>
                             </tr>
@@ -180,9 +180,9 @@ final class Settings_Page {
 
                 <!-- Fallback Section -->
                 <div class="ics-enhanced-section">
-                    <h2><?php esc_html_e( 'Fallback Image', 'ics-calendar-enhanced' ); ?></h2>
+                    <h2><?php esc_html_e( 'Fallback Icon', 'ics-calendar-enhanced' ); ?></h2>
                     <p class="description">
-                        <?php esc_html_e( 'This image will be shown for any category that is not explicitly mapped above. If not set, a bundled default image will be used.', 'ics-calendar-enhanced' ); ?>
+                        <?php esc_html_e( 'This icon will be shown for any category that is not explicitly mapped above. If not set, a bundled default icon will be used.', 'ics-calendar-enhanced' ); ?>
                     </p>
 
                     <table class="form-table">
@@ -206,7 +206,7 @@ final class Settings_Page {
                                     </div>
 
                                     <button type="button" class="button ics-enhanced-select-image" data-target="ics-enhanced-general-fallback">
-                                        <?php esc_html_e( 'Select Image', 'ics-calendar-enhanced' ); ?>
+                                        <?php esc_html_e( 'Select Icon', 'ics-calendar-enhanced' ); ?>
                                     </button>
                                     <button type="button" class="button ics-enhanced-remove-image" data-target="ics-enhanced-general-fallback" <?php echo $general_fallback <= 0 ? 'style="display:none;"' : ''; ?>>
                                         <?php esc_html_e( 'Remove', 'ics-calendar-enhanced' ); ?>
