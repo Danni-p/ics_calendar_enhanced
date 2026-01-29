@@ -37,6 +37,7 @@
         bindEvents();
         initializeEmptyState();
         initializeColorPickers();
+        initializeSortable();
     }
 
     /**
@@ -67,6 +68,27 @@
         tbody.attr('data-empty-message', 
             'No category mappings yet. Click "Add New Mapping" to create one.'
         );
+    }
+
+    /**
+     * Initialize sortable drag-and-drop on mapping rows.
+     */
+    function initializeSortable() {
+        const $tbody = $('#ics-enhanced-mappings-body');
+        if (!$tbody.length || !$.fn.sortable) {
+            return;
+        }
+        $tbody.sortable({
+            handle: '.ics-enhanced-drag-handle',
+            axis: 'y',
+            placeholder: 'ics-enhanced-sortable-placeholder',
+            cursor: 'move',
+            opacity: 0.8,
+            tolerance: 'pointer',
+            update: function() {
+                $tbody.find('.ics-enhanced-mapping-row').removeClass('ics-enhanced-sortable-updated');
+            }
+        });
     }
 
     /**
@@ -118,6 +140,12 @@
         $row.addClass('new-row');
         
         $('#ics-enhanced-mappings-body').append($row);
+
+        // Re-initialize sortable so the new row is included (no-op if already sortable)
+        const $tbody = $('#ics-enhanced-mappings-body');
+        if ($tbody.hasClass('ui-sortable')) {
+            $tbody.sortable('refresh');
+        }
 
         // Initialize color picker for the new row
         const $colorPicker = $row.find('.ics-enhanced-color-picker');

@@ -47,11 +47,14 @@ final class Assets {
             ICS_ENHANCED_VERSION
         );
 
+        // Enqueue jQuery UI sortable for drag-and-drop reordering
+        wp_enqueue_script( 'jquery-ui-sortable' );
+
         // Enqueue admin JavaScript
         wp_enqueue_script(
             'ics-enhanced-admin',
             ICS_ENHANCED_PLUGIN_URL . 'assets/js/admin.js',
-            [ 'jquery', 'wp-util', 'wp-color-picker' ],
+            [ 'jquery', 'jquery-ui-sortable', 'wp-util', 'wp-color-picker' ],
             ICS_ENHANCED_VERSION,
             true
         );

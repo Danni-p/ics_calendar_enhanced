@@ -160,6 +160,14 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/Admin/Settings_Page.php
+msgid "Reorder"
+msgstr ""
+
+#: src/Admin/Settings_Page.php
+msgid "Drag to reorder"
+msgstr ""
+
+#: src/Admin/Settings_Page.php
 msgid "Event Display"
 msgstr ""
 

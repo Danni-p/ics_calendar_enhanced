@@ -158,6 +158,7 @@ final class Settings_Page {
                     <table class="wp-list-table widefat fixed striped" id="ics-enhanced-mappings-table">
                         <thead>
                             <tr>
+                                <th class="column-drag" style="width: 32px;" aria-label="<?php esc_attr_e( 'Reorder', 'ics-calendar-enhanced' ); ?>"></th>
                                 <th class="column-category"><?php esc_html_e( 'Category String', 'ics-calendar-enhanced' ); ?></th>
                                 <th class="column-image"><?php esc_html_e( 'Icon', 'ics-calendar-enhanced' ); ?></th>
                                 <th class="column-color"><?php esc_html_e( 'Color', 'ics-calendar-enhanced' ); ?></th>
@@ -275,6 +276,9 @@ final class Settings_Page {
         $row_id = $is_template ? '{{INDEX}}' : uniqid( 'row_' );
         ?>
         <tr class="ics-enhanced-mapping-row" data-row-id="<?php echo esc_attr( $row_id ); ?>">
+            <td class="column-drag ics-enhanced-drag-handle" title="<?php esc_attr_e( 'Drag to reorder', 'ics-calendar-enhanced' ); ?>">
+                <span class="dashicons dashicons-menu" aria-hidden="true"></span>
+            </td>
             <td class="column-category">
                 <input type="text" 
                        name="ics_enhanced_categories[]" 

@@ -187,9 +187,7 @@ final class Display {
             return;
         }
 
-        // Sort alphabetically by category name for consistency
-        ksort( $color_mappings );
-
+        // Use order from admin (same as Category Mappings table; do not ksort).
         ?>
         <div class="ics-enhanced-color-legend">
             <span class="ics-enhanced-legend-title"><?php esc_html_e( 'Legend', 'ics-calendar-enhanced' ); ?></span>

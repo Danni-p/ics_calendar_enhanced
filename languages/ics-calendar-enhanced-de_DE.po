@@ -168,6 +168,14 @@ msgstr[0] "Noch %d Tag"
 msgstr[1] "Noch %d Tage"
 
 #: src/Admin/Settings_Page.php
+msgid "Reorder"
+msgstr "Sortieren"
+
+#: src/Admin/Settings_Page.php
+msgid "Drag to reorder"
+msgstr "Ziehen zum Ändern der Reihenfolge"
+
+#: src/Admin/Settings_Page.php
 msgid "Event Display"
 msgstr "Ereignisanzeige"
 
