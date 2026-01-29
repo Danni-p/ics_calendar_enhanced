@@ -54,6 +54,9 @@ final class Display {
 
         // Display color legend above calendar
         add_action( 'r34ics_display_calendar_before_wrapper', [ $this, 'render_color_legend' ], 10, 3 );
+
+        // Add "Location:" prefix before location content in event descriptions
+        add_filter( 'r34ics_event_description_html_filter', [ $this, 'filter_event_description_location_prefix' ], 10, 5 );
     }
 
     /**
@@ -221,6 +224,21 @@ final class Display {
             </ul>
         </div>
         <?php
+    }
+
+    /**
+     * Add a localized "Location:" prefix before the content of each .location div in event descriptions.
+     *
+     * @param string $descloc_content Event description HTML.
+     * @param array  $args            Shortcode arguments.
+     * @param array  $event           Event data.
+     * @param array  $classes         CSS classes.
+     * @param bool   $has_desc        Whether event has description.
+     * @return string Modified HTML.
+     */
+    public function filter_event_description_location_prefix( string $descloc_content, array $args, $event, $classes, $has_desc ): string {
+        $prefix = '<span class="ics-enhanced-location-prefix">' . esc_html__( 'Location:', 'ics-calendar-enhanced' ) . ' </span>';
+        return str_replace( '<div class="location">', '<div class="location">' . $prefix, $descloc_content );
     }
 
     /**

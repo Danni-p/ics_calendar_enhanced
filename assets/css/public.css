@@ -362,6 +362,14 @@
     }
 }
 
+/* ========================================
+   Location Prefix (Location: / Ort:)
+   ======================================== */
+
+.ics-enhanced-location-prefix {
+    font-weight: 600;
+}
+
 /* Print Styles for Legend */
 @media print {
     .ics-enhanced-color-legend {

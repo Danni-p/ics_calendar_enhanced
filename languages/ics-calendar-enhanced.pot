@@ -147,6 +147,10 @@ msgstr ""
 msgid "Icon for category: %s"
 msgstr ""
 
+#: src/Frontend/Display.php
+msgid "Location:"
+msgstr ""
+
 #: src/Frontend/Display.php:349
 msgid "Takes place today"
 msgstr ""

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: ICS Calendar Enhanced 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ICS Calendar Enhanced\n"
 "POT-Creation-Date: 2026-01-27T16:46:15+00:00\n"
-"PO-Revision-Date: 2026-01-29 00:46+0100\n"
+"PO-Revision-Date: 2026-01-29 01:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -154,6 +154,10 @@ msgstr "Legende"
 #, php-format
 msgid "Icon for category: %s"
 msgstr "Bild für Kategorie: %s"
+
+#: src/Frontend/Display.php
+msgid "Location:"
+msgstr "Ort:"
 
 #: src/Frontend/Display.php:349
 msgid "Takes place today"
